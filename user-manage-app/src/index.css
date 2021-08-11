@@ -5,7 +5,7 @@
                             'embedded-opentype', and 'svg' */
 }
 
-* {
+*:not(i) {
     font-family: "tanha" !important;
 }
 
