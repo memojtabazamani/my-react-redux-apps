@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import LoginForm from './LoginForm';
+
 const App = () => {
     return (
         <div className='ui container wrapper'>
-            سلام بچه ها من مجتبی هستم!
+            <LoginForm />
         </div>
     )
 }

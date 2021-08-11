@@ -9,6 +9,9 @@
     font-family: "tanha" !important;
 }
 
+body, html {
+    direction: rtl !important;
+}
 .wrapper {
     margin-top: 5%;
 }
