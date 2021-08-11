@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 
 const App = () => {
     return (
-        <>
-            Hello There
-        </>
+        <div className='ui container wrapper'>
+            سلام بچه ها من مجتبی هستم!
+        </div>
     )
 }
 
