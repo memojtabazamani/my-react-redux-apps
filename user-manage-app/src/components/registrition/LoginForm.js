@@ -22,7 +22,7 @@ const MyTextInput = ({ label, ...props }) => {
     };
 
     // And now we can use these
-    const SignupForm = () => {
+    const LoginForm = () => {
         return (
             <>
             <h1>ورود به حساب</h1>
@@ -36,7 +36,7 @@ const MyTextInput = ({ label, ...props }) => {
                 })}
                 onSubmit={(values) => {
 
-                     alert(JSON.stringify(values, null, 2));
+
 
                  }}
                 >
@@ -62,4 +62,4 @@ const MyTextInput = ({ label, ...props }) => {
     );
 };
 
-export default SignupForm;
+export default LoginForm;
