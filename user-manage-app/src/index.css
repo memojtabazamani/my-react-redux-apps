@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'tanha';
+  src: local('tanha'), url(./fonts/tanha/Tanha.woff) format('woff');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+*:not(i) {
+    font-family: "tanha" !important;
+}
+
+body, html {
+    direction: rtl !important;
+}
