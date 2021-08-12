@@ -18,6 +18,9 @@ const SignUpForm = (props) => {
             var jwt = require('jsonwebtoken');
             var token = jwt.sign({ foo: 'bar' }, 'shhhhh');
             props.registerUser(token) // ==> set hash
+
+            // Save this hash id in local storage.
+            window.localStorage.setItem('hashToken', token);
             setLoading(false); // ==> set loading false for show hash
         }, 2000)
     }
