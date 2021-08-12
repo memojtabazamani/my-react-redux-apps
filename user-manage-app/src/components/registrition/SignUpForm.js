@@ -5,8 +5,10 @@ import * as Yup from 'yup';
 import jwt from 'jsonwebtoken';
 import Loader from '../utilities/loeader';
 
-const SignUpForm = () => {
-    const [hash, setHash] = useState("");
+import {registerUser} from '../../actions';
+import { connect } from 'react-redux';
+
+const SignUpForm = (props) => {
     const [loading, setLoading] = useState(false);
 
     // In Here Generate Hash
@@ -15,17 +17,17 @@ const SignUpForm = () => {
         setTimeout(() => {
             var jwt = require('jsonwebtoken');
             var token = jwt.sign({ foo: 'bar' }, 'shhhhh');
-            setHash(token); // ==> set hash 
+            props.registerUser(token) // ==> set hash
             setLoading(false); // ==> set loading false for show hash
         }, 2000)
     }
-    if(hash) {
+    if(props.hashId) {
         return (
-            <div class="ui info message">
-                <h5 class="ui header center aligned centert">
-                    {hash}
+            <div className="ui info message">
+                <h5 className="ui header center aligned centert">
+                    {props.hashId}
                 </h5>
-                <ul class="list right aligned">
+                <ul className="list right aligned">
                     <li>شما میتوانید به طور موقت از این کد جهت انجام کارهای خود در سرویس های استفاده کنید</li>
                     <li>هرگز این کد را در اختیار کسی قرار ندهید!</li>
                 </ul>
@@ -53,4 +55,12 @@ const SignUpForm = () => {
     );
 };
 
-export default SignUpForm;
+const mapStateToProps = (state) => {
+    return {
+        hashId: state.auth.hashId
+    }
+}
+
+export default connect(mapStateToProps, {
+    registerUser
+})(SignUpForm);
