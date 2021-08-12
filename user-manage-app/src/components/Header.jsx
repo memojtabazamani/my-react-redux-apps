@@ -7,7 +7,7 @@ const header = (props) => {
         props.logOutUser();
     }
     const checkAuthenticate = () => {
-        if(props.auth.isSignedIn != null && props.auth.hashId != null) { // if logined
+        if(props.auth.isSignedIn != true && props.auth.hashId != null) { // if logined
             return (
                 <>
                     <Link to='/dashboard' className='item'>داشبورد</Link>

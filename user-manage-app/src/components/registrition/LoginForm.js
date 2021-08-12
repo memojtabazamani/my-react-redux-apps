@@ -15,11 +15,6 @@ const MyTextInput = ({ label, ...props }) => {
             <input {...field} {...props} />
             {meta.touched && meta.error ? (
                 <div className="ui negative message">
-                    {
-                        /*
-                        <i className="close icon"></i>
-                        */
-                    }
                     <div className="header">
                         {meta.error}
                     </div>

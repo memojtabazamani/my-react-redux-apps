@@ -1,4 +1,4 @@
-import { REGISTRION, LOGIN, LOGOUT } from './types';
+import { REGISTRION, LOGIN, LOGOUT, FETCH_TOKEN } from './types';
 
 
 // This action use for register
@@ -21,5 +21,14 @@ export const loginUser = (hash) => {
 export const logOutUser = () => {
     return {
         type: LOGOUT
+    }
+}
+
+// Fetch Token
+export const fetchTokenUser = () => {
+    const isset = window.localStorage.getItem('hashToken') ? window.localStorage.getItem('hashToken') : null;
+    return {
+        type: FETCH_TOKEN,
+        payload: isset
     }
 }
