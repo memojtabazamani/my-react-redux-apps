@@ -34,7 +34,10 @@ const LoginForm = (props) => {
     const [login, setLogin] = useState(true);
     const message = (
         <ul class="list">
-            <li>کد توکن شما منقضی شده</li>
+            <li>
+                کد توکن شما منقضی شده
+                ، لطفا به بخش ثبت نام رفته و کد توکن جدید دریافت کنید
+            </li>
             <li>توکن نادرست وارد میکنید</li>
             <li>اتصال اینترنت خود را بررسی کنید</li>
         </ul>
