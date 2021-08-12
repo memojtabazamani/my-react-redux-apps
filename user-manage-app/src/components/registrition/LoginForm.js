@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import { Formik, Form, ErrorMessage, useField } from 'formik';
 import * as Yup from 'yup';
+import {connect} from 'react-redux';
+import {loginUser} from '../../actions';
 
 import Message from '../utilities/Message';
 
@@ -28,7 +30,7 @@ const MyTextInput = ({ label, ...props }) => {
 };
 
 // And now we can use these
-const LoginForm = () => {
+const LoginForm = (props) => {
     const [login, setLogin] = useState(true);
     const message = (
         <ul class="list">
@@ -58,6 +60,7 @@ const LoginForm = () => {
                 // Check equal hash!
                 if(window.localStorage.getItem("hashToken") == values.hashId) {
                     setLogin(true);
+                    props.loginUser(values.hashId); // ==> dispatch action !
                 } else {
                     setLogin(false);
                 }
@@ -83,4 +86,6 @@ const LoginForm = () => {
 );
 };
 
-export default LoginForm;
+export default connect(null, {
+    loginUser
+})(LoginForm);
