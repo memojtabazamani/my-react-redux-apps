@@ -1,4 +1,4 @@
-import { REGISTRION } from '../actions/types';
+import { REGISTRION, LOGIN } from '../actions/types';
 
 const INITIAL_STATE = {
     isSignedIn: null,
@@ -6,8 +6,10 @@ const INITIAL_STATE = {
 };
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case REGISTRION :
+        case REGISTRION : // ==> Handle Registriton User
             return {...state, hashId: action.payload, isSignedIn: null};
+        case LOGIN : // ==> Handle Login User!
+            return {...state, hashId: action.payload, isSignedIn: true}
         default:
             return state
     }
