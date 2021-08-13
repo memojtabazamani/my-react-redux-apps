@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
-import { Formik, Form, ErrorMessage, useField } from 'formik';
+import { Formik, Form, useField } from 'formik';
 import * as Yup from 'yup';
 import {connect} from 'react-redux';
 import {loginUser} from '../../actions';
@@ -56,7 +56,7 @@ const LoginForm = (props) => {
                 // IN HERE DO NEDD OPERATIONS!
 
                 // Check equal hash!
-                if(window.localStorage.getItem("hashToken") == values.hashId) {
+                if(window.localStorage.getItem("hashToken") === values.hashId) {
                     setLogin(true);
                     props.loginUser(values.hashId); // ==> dispatch action !
                 } else {
