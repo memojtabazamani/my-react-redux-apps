@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logOutUser } from '../actions';
 
+
+
 const header = (props) => {
     const handleLogOut = () => {
         props.logOutUser();
