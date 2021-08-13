@@ -8,11 +8,7 @@ import {
 
 } from '../actions/types';
 
-const INITIAL_STATE = {
-    posts: null
-}
-
-export default (state = INITIAL_STATE, action) => {
+export default (state = {}, action) => {
     switch (action.type) {
         case FETCH_POSTS:
             return { ...state, ..._.mapKeys(action.payload, 'id') };

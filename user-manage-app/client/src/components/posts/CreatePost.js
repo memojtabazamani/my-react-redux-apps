@@ -35,7 +35,6 @@ const com =  (props) => {
                     title: Yup.string().required("عنوان پست باید درج شود")
                 })}
                 onSubmit={(values) => {
-                    console.log(values);
                     props.createPost(values);
                 }}
             >

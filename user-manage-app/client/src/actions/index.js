@@ -54,6 +54,7 @@ export const fetchPosts = () => async dispatch => {
     });
 };
 
+
 // Fetch Post
 export const fetchPost = (id) => async dispatch => {
     const response = await api.get(`/posts/${id}`);
