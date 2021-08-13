@@ -1,5 +1,17 @@
-import { REGISTRION, LOGIN, LOGOUT, FETCH_TOKEN } from './types';
+import {
+    REGISTRION,
+    LOGIN,
+    LOGOUT,
+    FETCH_TOKEN,
+    FETCH_POSTS,
+    FETCH_POST,
+    CREATE_POST,
+    EDIT_POST,
+    DELETE_POST,
 
+} from './types';
+
+import api from "../components/apis/myapi";
 
 // This action use for register
 export const registerUser = (hash) => {
@@ -32,3 +44,51 @@ export const fetchTokenUser = () => {
         payload: isset
     }
 }
+
+// Fetch Posts
+export const fetchPosts = () => async dispatch => {
+    const response = await api.get('/posts');
+    dispatch({
+        type: FETCH_POSTS,
+        payload: response.data
+    });
+};
+
+// Fetch Post
+export const fetchPost = (id) => async dispatch => {
+    const response = await api.get(`/posts/${id}`);
+    dispatch({
+        type: FETCH_POST,
+        payload: response.data
+    })
+};
+
+// Create Post
+export const createPost = (formValues) => async (dispatch, getState) => {
+    const  userId = getState().auth.hashId;
+    const response = await api.post('/posts', {...formValues, userId});
+    dispatch({
+        type: CREATE_POST,
+        payload: response.data
+    })
+};
+
+// Edit Post
+export const editPost = (formValues, id) => async (dispatch) => {
+    const response = await api.patch(`/posts/${id}`, formValues);
+    dispatch({
+        type: EDIT_POST,
+        payload: response.data
+    })
+}
+
+// DELETE OF STREAM
+export const deletePost = (id) => async dispatch => {
+    await api.delete(`/posts/${id}`);
+    dispatch({
+        type: DELETE_POST,
+        payload: id
+    });
+    // Redirect To Home Page.
+    // history.push("/");
+};
