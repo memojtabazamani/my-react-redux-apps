@@ -11,13 +11,14 @@ import EditPost  from './posts/EditPost';
 import CreatePost from './posts/CreatePost';
 import DeletePost from './posts/DeletePost';
 import Header from './Header';
+import IndexFront from '../IndexFront';
 
 const App = () => {
     return (
         <div className='ui container wrapper'>
             <Router history={history}>
                 <Header />
-                <Route path="/" exact />
+                <Route path="/" exact component={IndexFront}/>
                 <Route path="/registrition" component={SignUpForm} />
                 <Route path="/login" component={LoginForm} />
                 <Route path="/dashboard" exact component={Dashboard} />

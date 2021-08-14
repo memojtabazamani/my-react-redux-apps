@@ -56,7 +56,7 @@ const Com = (props) => {
         });
     };
 
-    if(props.posts) { // ==> Check For Show ALl Posts
+    if(props.posts.length > 0) { // ==> Check For Show ALl Posts
         return (
             <>
                 { // ==> Show Message
@@ -81,7 +81,6 @@ const Com = (props) => {
             </>
         );
     }
-
     return (
         <>
             <Loader />

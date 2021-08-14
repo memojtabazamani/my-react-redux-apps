@@ -33,10 +33,11 @@ export const loginUser = (hash) => {
 
 // This action log out user from account!
 export const logOutUser = () => {
+    history.push('/login'); // ==> Redirect to Login
     return {
         type: LOGOUT
     }
-    history.push('/login'); // ==> Redirect to Login
+
 }
 
 // Fetch Token
