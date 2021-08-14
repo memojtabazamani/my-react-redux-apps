@@ -14,8 +14,7 @@ import _ from 'lodash';
 const Com = (props) => {
     useEffect(() => {
         let id = props.match.params.id;
-        props.fetchPost(id);
-        console.log(props);
+        props.fetchPost(id); // ==> Retrive This Post from server for show details!
     },[])
     const onSubmitForm = (values) => {
         props.editPost(values, props.post.id); // ==> And here update my post
@@ -23,17 +22,16 @@ const Com = (props) => {
     return (
         <>
             <PostForm
-
                 handleMe={onSubmitForm}
                 initialValues={_.pick(props.post, "title", "description")}
-                />
+            />
         </>
     )
 }
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        post: state.posts[ownProps.match.params.id]
+        post: state.posts[ownProps.match.params.id] // ==> Get Own Of this post!
     }
 }
 
