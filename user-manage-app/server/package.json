@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": { "start" : "json-server -p 3005 -w db.json"  },
+  "scripts": { "start" : "json-server -p 3015 -w db.json"  },
   "author": "",
   "license": "ISC",
   "dependencies": {

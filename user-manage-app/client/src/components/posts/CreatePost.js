@@ -9,14 +9,12 @@ import PostForm from './PostForm';
 
 
 const com = (props) => {
-    const onSubmitForm = () => {
-        // console.log(values);
-        // props.createPost(values);
-        console.log("submirted");
+    const onSubmitForm = (values) => {
+        props.createPost(values);
     }
     return (
         <>
-            <PostForm handleMe={() => onSubmitForm}/>
+            <PostForm handleMe={onSubmitForm}/>
         </>
     )
 }
