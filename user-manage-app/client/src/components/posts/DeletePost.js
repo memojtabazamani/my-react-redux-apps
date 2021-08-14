@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 
 import {connect} from 'react-redux';
 import {deletePost, fetchPost} from '../../actions';
-
 import Modal from '../utilities/Modal';
+
+import history from '../utilities/history'; // ==> Use History For Redirect!
 
 const Com =  (props) => {
     useEffect(() => {
@@ -17,7 +18,7 @@ const Com =  (props) => {
     const actions = (
         <div className="actions">
             <div className="ui red button" onClick={(e) => deletePostEvent() }>حذف</div>
-            <div className="ui cancel button">بستن</div>
+            <div className="ui cancel button" onClick={(e) => history.push("/dashboard") }>بستن</div>
         </div>
     )
 
@@ -36,6 +37,7 @@ const Com =  (props) => {
             title="حذف پست"
             content={renderContent()}
             actions={actions}
+            onDismiss={(e) => history.push("/dashboard")}
             />
         </>
 )

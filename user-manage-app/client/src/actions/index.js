@@ -13,6 +13,8 @@ import {
 
 import api from "../components/apis/myapi";
 
+import history from '../components/utilities/history'; // ==> Use History For Redirect!
+
 // This action use for register
 export const registerUser = (hash) => {
     return {
@@ -71,7 +73,9 @@ export const createPost = (formValues) => async (dispatch, getState) => {
     dispatch({
         type: CREATE_POST,
         payload: response.data
-    })
+    });
+
+    history.push('/dashboard'); // ==> Redirect To Dashboard Page
 };
 
 // Edit Post
@@ -80,7 +84,9 @@ export const editPost = (formValues, id) => async (dispatch) => {
     dispatch({
         type: EDIT_POST,
         payload: response.data
-    })
+    });
+
+    history.push('/dashboard'); // ==> Redirect To Dashboard Page
 }
 
 // DELETE OF STREAM
@@ -90,6 +96,6 @@ export const deletePost = (id) => async dispatch => {
         type: DELETE_POST,
         payload: id
     });
-    // Redirect To Home Page.
-    // history.push("/");
+
+    history.push('/dashboard'); // ==> Redirect To Dashboard Page
 };

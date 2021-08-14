@@ -20,13 +20,13 @@
       "title": "عنوان اول",
       "description": "توضیحات عنوان اول",
       "userId": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE2Mjg3NjQ3NDZ9.zR5LcMzjQpkT9NTgZPEVSHR5LavSDidbuAVALUYbJjs",
-      "id": 4
+      "id": 6
     },
     {
-      "title": "عنوان اول",
-      "description": "توضیحات عنوان اول",
+      "title": "پست تست ویرایش شده",
+      "description": "این ویرایش شده!",
       "userId": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE2Mjg3NjQ3NDZ9.zR5LcMzjQpkT9NTgZPEVSHR5LavSDidbuAVALUYbJjs",
-      "id": 6
+      "id": 7
     }
   ]
 }
