@@ -9,6 +9,7 @@ import {editPost, fetchPost} from '../../actions';
 // Import My Component
 import PostForm from './PostForm';
 import _ from 'lodash';
+import history from '../utilities/history';
 
 
 const Com = (props) => {
@@ -19,6 +20,13 @@ const Com = (props) => {
     // Handle Form Submit
     const onSubmitForm = (values) => {
         props.editPost(values, props.post.id); // ==> And here update my post
+        history.push({ // Use This Method For Show Message When Redirect!!
+            pathname: '/dashboard',
+            state: {
+                message: "پست شما با موفقیت ویرایش و مجدد در وبلاگ قرار گرفت",
+                type: "info"
+            }
+        });
     }
     // Make Custom Submit Button
     const submitButton = <button className="ui orange button" type="submit">ویرایش و انتشار مجدد</button>

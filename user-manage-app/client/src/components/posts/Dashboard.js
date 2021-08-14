@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import {connect} from 'react-redux';
 import {createPost, fetchPosts} from '../../actions';
@@ -7,15 +7,25 @@ import history from '../utilities/history';
 
 // Import My Components
 import Loader from '../utilities/loeader';
+import Message from '../utilities/Message';
 const Com = (props) => {
-    useEffect(() => {
+    useEffect(() => { // Handle And Show Posts Or Core Of Component In Here
+        if(props.location.state != null) {
+            setMessag(true);
+        }
         // Check If Not Signed Can't See Options Of Thie PAGE !! WARNING!!
         if(props.auth.isSignedIn == false) {
             history.push('/login'); // Redirect to back!
         }
         props.fetchPosts();
+
     }, []);
 
+    const [message, setMessag] = useState(false);
+
+    const closeMessage = () => {
+        setMessag(false);
+    } // ==> Handle Closing Message
     const renderOptionButton = (post) => {
         return (
             <div className="extra content">
@@ -46,9 +56,17 @@ const Com = (props) => {
         });
     };
 
-    if(props.posts) {
+    if(props.posts) { // ==> Check For Show ALl Posts
         return (
             <>
+                { // ==> Show Message
+                    message &&
+                     <Message
+                         content={props.location.state.message}
+                         type={props.location.state.type}
+                         closeMessage={(e) => closeMessage}
+                    />
+                }
                 <div className="ui cards">
                     {renderList()}
                 </div>
@@ -63,6 +81,7 @@ const Com = (props) => {
             </>
         );
     }
+
     return (
         <>
             <Loader />

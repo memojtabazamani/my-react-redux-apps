@@ -13,6 +13,13 @@ const Com =  (props) => {
     }, []);
     const deletePostEvent = () => {
         props.deletePost(props.match.params.id);
+        history.push({ // Use This Method For Show Message When Redirect!!
+            pathname: '/dashboard',
+            state: {
+                message: "پست شما از وبلاگ حذف شد",
+                type: "warning"
+            }
+        });
     }
 
     const actions = (

@@ -76,7 +76,7 @@ export const createPost = (formValues) => async (dispatch, getState) => {
         payload: response.data
     });
 
-    history.push('/dashboard'); // ==> Redirect To Dashboard Page
+
 };
 
 // Edit Post
@@ -86,8 +86,6 @@ export const editPost = (formValues, id) => async (dispatch) => {
         type: EDIT_POST,
         payload: response.data
     });
-
-    history.push('/dashboard'); // ==> Redirect To Dashboard Page
 }
 
 // DELETE OF STREAM
@@ -97,6 +95,4 @@ export const deletePost = (id) => async dispatch => {
         type: DELETE_POST,
         payload: id
     });
-
-    history.push('/dashboard'); // ==> Redirect To Dashboard Page
 };
