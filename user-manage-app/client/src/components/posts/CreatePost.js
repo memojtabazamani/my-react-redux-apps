@@ -12,9 +12,14 @@ const com = (props) => {
     const onSubmitForm = (values) => {
         props.createPost(values);
     }
+    // Make Custom Form Button
+    const submitButton = <button className="ui blue button" type="submit">انتشار پست</button>
+
     return (
         <>
-            <PostForm handleMe={onSubmitForm}/>
+            <PostForm
+                submitButton={submitButton}
+                handleMe={onSubmitForm}/>
         </>
     )
 }

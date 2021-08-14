@@ -36,6 +36,7 @@ export const logOutUser = () => {
     return {
         type: LOGOUT
     }
+    history.push('/login'); // ==> Redirect to Login
 }
 
 // Fetch Token

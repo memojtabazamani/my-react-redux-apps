@@ -3,11 +3,19 @@ import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 import {createPost, fetchPosts} from '../../actions';
 import {Link} from 'react-router-dom';
+import history from '../utilities/history';
 
+// Import My Components
+import Loader from '../utilities/loeader';
 const Com = (props) => {
     useEffect(() => {
+        // Check If Not Signed Can't See Options Of Thie PAGE !! WARNING!!
+        if(props.auth.isSignedIn == false) {
+            history.push('/login'); // Redirect to back!
+        }
         props.fetchPosts();
     }, []);
+
     const renderOptionButton = (post) => {
         return (
             <div className="extra content">
@@ -37,21 +45,31 @@ const Com = (props) => {
             }
         });
     };
+
+    if(props.posts) {
+        return (
+            <>
+                <div className="ui cards">
+                    {renderList()}
+                </div>
+                <div className="ui grid">
+                    <div className="sixteen wide column">
+                        <Link to={`/dashboard/posts/create`} className="ui primary button">
+                            <i className="pencil icon"></i>
+                            اضافه کردن پست جدید
+                        </Link>
+                    </div>
+                </div>
+            </>
+        );
+    }
     return (
         <>
-            <div className="ui cards">
-                {renderList()}
-            </div>
-            <div className="ui grid">
-                <div className="sixteen wide column">
-                    <Link to={`/dashboard/posts/create`} className="ui primary button">
-                        <i className="pencil icon"></i>
-                        اضافه کردن پست جدید
-                    </Link>
-                </div>
-            </div>
+            <Loader />
         </>
-    );
+    )
+
+
 }
 
 const mapStateToProps = (state) => {
