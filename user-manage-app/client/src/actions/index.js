@@ -13,6 +13,8 @@ import {
 
 import api from "../components/apis/myapi";
 
+import history from '../components/utilities/history'; // ==> Use History For Redirect!
+
 // This action use for register
 export const registerUser = (hash) => {
     return {
@@ -31,9 +33,11 @@ export const loginUser = (hash) => {
 
 // This action log out user from account!
 export const logOutUser = () => {
+    history.push('/login'); // ==> Redirect to Login
     return {
         type: LOGOUT
     }
+
 }
 
 // Fetch Token
@@ -71,7 +75,9 @@ export const createPost = (formValues) => async (dispatch, getState) => {
     dispatch({
         type: CREATE_POST,
         payload: response.data
-    })
+    });
+
+
 };
 
 // Edit Post
@@ -80,7 +86,7 @@ export const editPost = (formValues, id) => async (dispatch) => {
     dispatch({
         type: EDIT_POST,
         payload: response.data
-    })
+    });
 }
 
 // DELETE OF STREAM
@@ -90,6 +96,4 @@ export const deletePost = (id) => async dispatch => {
         type: DELETE_POST,
         payload: id
     });
-    // Redirect To Home Page.
-    // history.push("/");
 };

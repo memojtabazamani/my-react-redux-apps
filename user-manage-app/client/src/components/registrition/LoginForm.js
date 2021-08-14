@@ -4,8 +4,9 @@ import { Formik, Form, useField } from 'formik';
 import * as Yup from 'yup';
 import {connect} from 'react-redux';
 import {loginUser} from '../../actions';
-
 import Message from '../utilities/Message';
+
+import history from '../utilities/history'; // ==> Use History For Redirect!
 
 const MyTextInput = ({ label, ...props }) => {
     const [field, meta] = useField(props);
@@ -59,6 +60,7 @@ const LoginForm = (props) => {
                 if(window.localStorage.getItem("hashToken") === values.hashId) {
                     setLogin(true);
                     props.loginUser(values.hashId); // ==> dispatch action !
+                    history.push('/dashboard');
                 } else {
                     setLogin(false);
                 }

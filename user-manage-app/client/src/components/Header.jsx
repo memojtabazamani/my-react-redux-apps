@@ -34,6 +34,7 @@ const header = (props) => {
     }
     return(
         <div className="ui menu">
+            <Link to='/' className='item'>وبلاگ</Link>
             { checkAuthenticate() }
         </div>
     )

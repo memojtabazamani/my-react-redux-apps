@@ -1,13 +1,31 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import {connect} from 'react-redux';
 import {createPost, fetchPosts} from '../../actions';
 import {Link} from 'react-router-dom';
+import history from '../utilities/history';
 
+// Import My Components
+import Loader from '../utilities/loeader';
+import Message from '../utilities/Message';
 const Com = (props) => {
-    useEffect(() => {
+    useEffect(() => { // Handle And Show Posts Or Core Of Component In Here
+        if(props.location.state != null) { // ==> Handle Show Message For User
+            setMessag(true);
+        }
+        // Check If Not Signed Can't See Options Of Thie PAGE !! WARNING!!
+        if(props.auth.isSignedIn == false) {
+            history.push('/login'); // Redirect to back!
+        }
         props.fetchPosts();
+
     }, []);
+
+    const [message, setMessag] = useState(false);
+
+    const closeMessage = () => {
+        setMessag(false);
+    } // ==> Handle Closing Message
     const renderOptionButton = (post) => {
         return (
             <div className="extra content">
@@ -18,9 +36,9 @@ const Com = (props) => {
             </div>
         )
     };
-    const renderList = () => {
+    const renderList = () => { // ==> Render List Of Posts
         return props.posts.map(post => {
-            if (post.userId === props.auth.hashId) {
+            if (post.userId === props.auth.hashId) { // Must Be check owner user in here
                 return (
                     <div className="card" key={post.id}>
                         <div className="content">
@@ -37,21 +55,39 @@ const Com = (props) => {
             }
         });
     };
+
+    if(props.posts.length > 0) { // ==> Check For Show ALl Posts
+        return (
+            <>
+                { // ==> Show Message
+                    message &&
+                     <Message
+                         content={props.location.state.message}
+                         type={props.location.state.type}
+                         closeMessage={(e) => closeMessage}
+                    />
+                }
+                <div className="ui cards">
+                    {renderList()}
+                </div>
+                <div className="ui grid">
+                    <div className="sixteen wide column">
+                        <Link to={`/dashboard/posts/create`} className="ui primary button">
+                            <i className="pencil icon"></i>
+                            اضافه کردن پست جدید
+                        </Link>
+                    </div>
+                </div>
+            </>
+        );
+    }
     return (
         <>
-            <div className="ui cards">
-                {renderList()}
-            </div>
-            <div className="ui grid">
-                <div className="sixteen wide column">
-                    <Link to={`/dashboard/posts/create`} className="ui primary button">
-                        <i className="pencil icon"></i>
-                        اضافه کردن پست جدید
-                    </Link>
-                </div>
-            </div>
+            <Loader />
         </>
-    );
+    )
+
+
 }
 
 const mapStateToProps = (state) => {
