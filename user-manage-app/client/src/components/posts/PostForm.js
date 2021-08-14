@@ -23,9 +23,7 @@ const com =  (props) => {
     return (
         <>
             <Formik
-                initialValues={
-                    { title: "", description: ""  }
-                }
+                initialValues={props.initialValues}
                 validationSchema={Yup.object({
                     title: Yup.string().required("عنوان پست باید درج شود")
                 })}
@@ -57,5 +55,11 @@ const com =  (props) => {
     )
 }
 
+com.defaultProps = {
+    initialValues: {
+        title:"",
+        description: ""
+    }
+}
 
 export default com;
