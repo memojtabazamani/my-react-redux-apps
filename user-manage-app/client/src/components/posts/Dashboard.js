@@ -10,7 +10,7 @@ import Loader from '../utilities/loeader';
 import Message from '../utilities/Message';
 const Com = (props) => {
     useEffect(() => { // Handle And Show Posts Or Core Of Component In Here
-        if(props.location.state != null) {
+        if(props.location.state != null) { // ==> Handle Show Message For User
             setMessag(true);
         }
         // Check If Not Signed Can't See Options Of Thie PAGE !! WARNING!!
@@ -36,9 +36,9 @@ const Com = (props) => {
             </div>
         )
     };
-    const renderList = () => {
+    const renderList = () => { // ==> Render List Of Posts
         return props.posts.map(post => {
-            if (post.userId === props.auth.hashId) {
+            if (post.userId === props.auth.hashId) { // Must Be check owner user in here
                 return (
                     <div className="card" key={post.id}>
                         <div className="content">
