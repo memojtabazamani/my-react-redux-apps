@@ -8,7 +8,6 @@ import * as Yup from 'yup';
 import PostForm from './PostForm';
 import history from '../utilities/history';
 
-
 const com = (props) => {
     const onSubmitForm = (values) => {
         props.createPost(values);
