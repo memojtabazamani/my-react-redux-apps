@@ -21,10 +21,10 @@ const App = () => {
                 <Route path="/" exact component={IndexFront}/>
                 <Route path="/registrition" component={SignUpForm} />
                 <Route path="/login" component={LoginForm} />
-                <Route path="/dashboard" exact component={Dashboard} />
-                <Route path="/dashboard/posts/edit/:id" component={EditPost} />
-                <Route path="/dashboard/posts/create/" component={CreatePost} />
-                <Route path="/dashboard/posts/delete/:id" component={DeletePost} />
+                <Route path="/dashboard" exact component={Dashboard}/>
+                    <Route path="/dashboard/posts/edit/:id" component={EditPost} />
+                    <Route path="/dashboard/posts/create/" component={CreatePost} />
+                    <Route path="/dashboard/posts/delete/:id" component={DeletePost} />
             </Router>
         </div>
     )
