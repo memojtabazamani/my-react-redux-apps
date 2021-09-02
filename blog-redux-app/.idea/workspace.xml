@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="277985b8-d721-42f9-93dc-341913d35d9b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/client/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/reducers/data/createReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/reducers/data/postsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,22 +20,33 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/constants/index.js">
+        <entry file="file://$PROJECT_DIR$/client/src/reducers/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="22" column="43" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="22" selection-end-column="43" />
+            <state relative-caret-position="208">
+              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#0#40#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/actions/index.js">
+      <file leaf-file-name="postsReducer.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/reducers/data/postsReducer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="602">
-              <caret line="88" column="7" selection-start-line="88" selection-start-column="7" selection-end-line="88" selection-end-column="7" />
+              <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/actions/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="546">
+              <caret line="55" column="30" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="30" />
+              <caret line="64" column="30" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="30" />
+              <caret line="72" column="28" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -57,7 +71,6 @@
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/server/db.json" />
         <option value="$PROJECT_DIR$/server/package.json" />
-        <option value="$PROJECT_DIR$/client/src/reducers/index.js" />
         <option value="$PROJECT_DIR$/client/src/api/index.js" />
         <option value="$PROJECT_DIR$/client/src/sagas/index.js" />
         <option value="$PROJECT_DIR$/client/src/index.js" />
@@ -73,6 +86,11 @@
         <option value="$PROJECT_DIR$/client/src/store/index.js" />
         <option value="$PROJECT_DIR$/client/src/constants/index.js" />
         <option value="$PROJECT_DIR$/client/src/actions/index.js" />
+        <option value="$PROJECT_DIR$/client/src/reducers/postsReducers.js" />
+        <option value="$PROJECT_DIR$/client/src/reducers/data/fetchsReducers.js" />
+        <option value="$PROJECT_DIR$/client/src/reducers/data/createReducer.js" />
+        <option value="$PROJECT_DIR$/client/src/reducers/index.js" />
+        <option value="$PROJECT_DIR$/client/src/reducers/data/postsReducer.js" />
       </list>
     </option>
   </component>
@@ -132,6 +150,21 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="actions" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="blog-redux-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog-redux-app" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog-redux-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog-redux-app" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -150,6 +183,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\GitHub\Front End\React JS\my-react-redux-apps\blog-redux-app\client\src\reducers\data" />
       <recent name="C:\xampp\htdocs\GitHub\Front End\React JS\my-react-redux-apps\blog-redux-app\client\src\components" />
     </key>
   </component>
@@ -195,12 +229,12 @@
       <workItem from="1630340429494" duration="1185000" />
       <workItem from="1630425523634" duration="3983000" />
       <workItem from="1630475651219" duration="605000" />
-      <workItem from="1630597590202" duration="1363000" />
+      <workItem from="1630597590202" duration="2230000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8093000" />
+    <option name="totallyTimeSpent" value="8960000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -421,18 +455,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/constants/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="22" column="43" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="22" selection-end-column="43" />
+        <state relative-caret-position="472">
+          <caret line="27" column="41" lean-forward="true" selection-start-line="24" selection-start-column="3" selection-end-line="27" selection-end-column="41" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/data/createReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/actions/index.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="55" column="30" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="30" />
+          <caret line="64" column="30" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="30" />
+          <caret line="72" column="28" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/data/postsReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="602">
-          <caret line="88" column="7" selection-start-line="88" selection-start-column="7" selection-end-line="88" selection-end-column="7" />
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
         </state>
       </provider>
     </entry>
