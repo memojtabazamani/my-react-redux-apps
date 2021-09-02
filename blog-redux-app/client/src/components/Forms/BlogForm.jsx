@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik, Form } from 'formik';
-import * as Yup from 'yup';
+
 import MyTextInput from "./Input";
 
 const com =  (props) => {
@@ -11,6 +11,7 @@ const com =  (props) => {
                 onSubmit={(values) => {
                     props.handleMe(values);
                 }}
+                validationSchema={props.validation}
             >
                 <Form className='ui form'>
                     <MyTextInput
