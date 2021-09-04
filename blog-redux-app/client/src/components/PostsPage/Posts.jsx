@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
-import { connect } from 'react-redux';
+import React, {useEffect} from 'react'
+import {connect} from 'react-redux';
 
 // MY COMPONENTS
 import Message from '../../components/Utilities/Message';
 import LoadingPost from '../../components/Utilities/LoadingPost';
 // MY ACTIONS
-import { fetchPostsRequest } from '../../actions/index';
+import {fetchPostsRequest} from '../../actions/index';
 import Post from './Post';
 
 export const Posts = (props) => {
@@ -13,51 +13,64 @@ export const Posts = (props) => {
         props.fetchPostsRequest();
     }, []);
 
+    const renderDeleteMessagePost = () => {
+        if(props.deleteState.status === "success") {
+            return (
+                <>
+                    <Message content="Your Post Has Ben Delete" icon='info' type='blue'/>
+                </>
+            )
+        } else if(props.deleteState.status === "error") {
+            return (
+                <>
+                    <Message content={props.deleteState.message} icon='warning' type='red'/>
+                </>
+            )
+        } return (<></>)
+    };
     const renderPsots = () => {
-        if(props.errorPosts) {
+        if (props.errorPosts) {
             return (
                 <>
                     <Message
-                    icon="warning"
-                    header="Error"
-                    content={props.errorPosts}
-                    type="red"
+                        icon="warning"
+                        header="Error"
+                        content={props.errorPosts}
+                        type="red"
                     />
                 </>
             )
-        } else if(props.posts.length > 0) { // Check Must Be Have Data
+        } else if (props.posts.length > 0) { // Check Must Be Have Data
             return (
                 <div className="ui cards">
                     {
                         props.posts.map((post) => {
-                           return (<Post post={post} />)
+                            return (<Post post={post}/>)
                         })
                     }
-                    {
-                        props.isDelete && <Message content="Your Post Has Ben Delete" icon='info' type='blue'/>
-                    }
+                    {renderDeleteMessagePost()}
                 </div>
             );
         }
         return ( // Show Loading If not have data!
             <>
-               <LoadingPost />
+                <LoadingPost/>
             </>
         )
     };
 
     return (
         <div>
-            { renderPsots() }
+            {renderPsots()}
         </div>
     )
 };
 
 const mapStateToProps = (state) => {
     return {
-        posts:Object.values(state.posts),
+        posts: Object.values(state.posts),
         errorPosts: state.errorFetchPosts,
-        isDelete: state.deletePostSuccess
+        deleteState: state.deletePostState
     }
 };
 

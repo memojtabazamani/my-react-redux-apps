@@ -39,7 +39,7 @@ export const deletePost = async(id) => {
     const response = await myAxios.delete(`/posts/${id}`);
     const {data} = response;
     if(response.status >= 400) {
-        throw new Error(data.errors);
+        throw new Error("Occured A Problem.");
     }
 
     return id;
