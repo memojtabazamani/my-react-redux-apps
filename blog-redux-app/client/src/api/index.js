@@ -36,12 +36,13 @@ export const editPost = async(id, values) => {
 
 // HANDLE DELETE POST FUNCTION
 export const deletePost = async(id) => {
-    const response = await myAxios.delete(`/post/${id}`);
+    const response = await myAxios.delete(`/posts/${id}`);
+    const {data} = response;
     if(response.status >= 400) {
         throw new Error(data.errors);
     }
-    const {data} = response;
-    return data;
+
+    return id;
 }
 
 // HANDLE DETAIL POST FUNCTION

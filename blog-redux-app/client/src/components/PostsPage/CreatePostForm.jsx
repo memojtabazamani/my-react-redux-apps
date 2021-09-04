@@ -1,12 +1,27 @@
 import BlogForm from '../Forms/BlogForm';
+import { connect } from 'react-redux';
 
-export default  () => {
+// MY ACTIONS
+import {createPostRequest, fetchPostsRequest} from '../../actions';
+
+const Com = (props) => {
     const submitForm = (values) => {
-        console.log(values);
+        props.createPostRequest(values);
     };
     return (
         <BlogForm
-            handleMe={(e) => submitForm()}
+            handleMe={submitForm}
         />
     )
-}
+};
+
+const mapStateToProps = (state) => {
+    return {  }
+};
+
+
+const mapDispatchToProps = {
+    createPostRequest
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Com);

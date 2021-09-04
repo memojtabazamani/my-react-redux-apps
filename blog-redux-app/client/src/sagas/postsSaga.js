@@ -34,6 +34,7 @@ export function* handlePostSaga(action) {
 This function handle when need to create post!
 */
 export function* handleCreatePostSaga(action) {
+
     try{
         const post = yield call(createPost, action.values);
         yield put(createPostSuccess(post));

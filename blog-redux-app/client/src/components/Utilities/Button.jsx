@@ -10,13 +10,10 @@ type: Show Type of Button Like Green, Blue, Danger
 */
 
 const Button = ({ isLoading, icon, content, type, handleClick }) => {
-    const handleClickButton = (e) => {
-        handleClick();
-    };
     return (
         <button
             className={`ui active ${type} ${isLoading ? "loading" : ""} button`}
-            onClick={(e) => handleClickButton}
+            onClick={(e) => handleClick()}
         >
              <i className={`${icon} icon`} />
             {content}

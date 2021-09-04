@@ -31,12 +31,20 @@ const com =  (props) => {
                         placeholder="..."
                         className="ui segment"
                     />
+
+                    <MyTextInput
+                        label="Enter Author"
+                        name="author"
+                        type="text"
+                        placeholder="..."
+                        className="ui segment"
+                    />
                     { props.submitButton }
                 </Form>
             </Formik>
         </>
     )
-}
+};
 
 com.defaultProps = {
     initialValues: {
@@ -44,6 +52,6 @@ com.defaultProps = {
         description: ""
     },
     submitButton: <button className="ui green button" type="submit">Submit Form</button>
-}
+};
 
 export default com;
