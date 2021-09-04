@@ -33,6 +33,9 @@ export const Posts = (props) => {
                            return (<Post post={post} />)
                         })
                     }
+                    {
+                        props.isDelete && <Message content="Your Post Has Ben Delete" icon='info' type='blue'/>
+                    }
                 </div>
             );
         }
@@ -53,7 +56,8 @@ export const Posts = (props) => {
 const mapStateToProps = (state) => {
     return {
         posts:Object.values(state.posts),
-        errorPosts: state.errorFetchPosts
+        errorPosts: state.errorFetchPosts,
+        isDelete: state.deletePostSuccess
     }
 };
 

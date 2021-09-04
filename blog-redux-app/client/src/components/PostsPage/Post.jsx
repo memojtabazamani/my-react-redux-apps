@@ -10,9 +10,9 @@ export const Post = (props) => {
 
     // FUNCTIONS
     const deletePost = () => {
-        console.log("Hello");
         props.deletePostRequest(post.id);
     };
+
 
     return (
         <div className="card">
