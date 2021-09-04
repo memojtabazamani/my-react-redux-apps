@@ -7,9 +7,9 @@ PROPS:
 - Content
 */
 
-const Message = ({ icon, header, content }) => {
+const Message = ({ icon, header, content, type }) => {
     return (
-        <div className="ui icon message">
+        <div className={`ui ${type} icon message`}>
             <i className={`${icon} icon`}></i>
             <div className="content">
                 <div className="header">
@@ -26,7 +26,8 @@ const Message = ({ icon, header, content }) => {
 Message.defaultProps = {
     icon: "inbox",
     header: "Some Message !",
-    content: "Get the best news in your e-mail every day."
+    content: "Get the best news in your e-mail every day.",
+    type: "basic"
 };
 
 export default Message;

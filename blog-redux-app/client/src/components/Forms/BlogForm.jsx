@@ -1,7 +1,9 @@
 import React from 'react';
 import { Formik, Form } from 'formik';
-
 import MyTextInput from "./Input";
+
+// MY COMPOENNTS
+import { InsertFormValidation } from './validations';
 
 const com =  (props) => {
     return (
@@ -11,7 +13,7 @@ const com =  (props) => {
                 onSubmit={(values) => {
                     props.handleMe(values);
                 }}
-                validationSchema={props.validation}
+                validationSchema={InsertFormValidation()}
             >
                 <Form className='ui form'>
                     <MyTextInput
@@ -29,19 +31,27 @@ const com =  (props) => {
                         placeholder="..."
                         className="ui segment"
                     />
+
+                    <MyTextInput
+                        label="Enter Author"
+                        name="author"
+                        type="text"
+                        placeholder="..."
+                        className="ui segment"
+                    />
                     { props.submitButton }
                 </Form>
             </Formik>
         </>
     )
-}
+};
 
 com.defaultProps = {
     initialValues: {
         title:"",
         description: ""
     },
-    submitButton: <button className="ui green button" type="submit">تأیید اطلاعات</button>
-}
+    submitButton: <button className="ui green button" type="submit">Submit Form</button>
+};
 
 export default com;

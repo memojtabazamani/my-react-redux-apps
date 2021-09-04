@@ -1,12 +1,19 @@
+import {Link} from 'react-router-dom';
+
 const Header = () => {
-    const { REACT_APP_MY_ENV } = process.env;
+    const { REACT_TITLE_HEADER } = process.env;
     return (
         <div className="ui fixed inverted menu">
             <div className="ui container">
                 <a href="#" className="header item">
-                    {REACT_APP_MY_ENV}
+                    {REACT_TITLE_HEADER}
                 </a>
-                <a href="#" className="item">Home</a>
+                <Link className='item' to="/">
+                    Home
+                </Link>
+                <Link className='item' to="/create">
+                    Write New Post
+                </Link>
             </div>
         </div>
     );
