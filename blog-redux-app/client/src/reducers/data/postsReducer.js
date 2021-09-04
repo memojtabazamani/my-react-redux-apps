@@ -29,6 +29,13 @@ export default (state = INITIAL_STATE, action) => {
         case POSTS.UPDATE_POST_ERROR:
             return {...state, error: action.error};
 
+        case POSTS.DELETE_POST_REQUEST:
+            return state;
+        case POSTS.DELETE_POST_SUCCESS:
+            return _.omit(state, action.id);
+        case POSTS.DELETE_POST_ERROR:
+            return {...state, error: action.error};
+
         default:
             return state;
     }
