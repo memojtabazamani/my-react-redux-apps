@@ -2,10 +2,11 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux';
 
 // MY COMPONENTS
-import Message from '../components/Utilities/Message';
+import Message from '../../components/Utilities/Message';
 
 // MY ACTIONS
-import { fetchPostsRequest } from '../actions/index';
+import { fetchPostsRequest } from '../../actions/index';
+import Post from './Post';
 
 export const Posts = (props) => {
     useEffect(() => {
@@ -24,6 +25,16 @@ export const Posts = (props) => {
                     />
                 </>
             )
+        } else if(props.posts) {
+            return (
+                <div className="ui cards">
+                    {
+                        props.posts.map((post) => {
+                            <Post post={post} />
+                        })
+                    }
+                </div>
+            );
         }
     }
 

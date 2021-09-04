@@ -1,7 +1,7 @@
 // My Components
 import Header from '../components/Utilities/Header';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Posts from './Posts';
+import Posts from './PostsPage/Posts';
 
 // CONSTANTS
 const STYLES = {

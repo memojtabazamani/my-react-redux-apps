@@ -1,5 +1,6 @@
 {
   "posts": [
-    { "id": 0, "title": "", "author": "" }
+    { "id": 1, "title": "First Card", "author": "Mojtaba zamani", "body": "Hello This is First Card!" },
+    { "id": 2, "title": "Second Card", "author": "Mojtaba zamani", "body": "Hello This is Second Card!" }
   ]
 }
