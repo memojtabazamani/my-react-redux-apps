@@ -3,10 +3,9 @@ This is my button component!
 
 PROPS:
 IsLoading: when a need to show loading !
-icon: show cutome icon!
+icon: show custome icon!
 content: Show Content of Button!
 type: Show Type of Button Like Green, Blue, Danger
-
 
 */
 
@@ -15,8 +14,11 @@ const Button = ({ isLoading, icon, content, type, handleClick }) => {
         handleClick();
     };
     return (
-        <button className={`ui active ${type} ${isLoading && "loading"} button`} onClick={(e) => handleClickButton}>
-            <i className={`${icon} icon`} />
+        <button
+            className={`ui active ${type} ${isLoading ? "loading" : ""} button`}
+            onClick={(e) => handleClickButton}
+        >
+             <i className={`${icon} icon`} />
             {content}
         </button>
     )
@@ -24,7 +26,7 @@ const Button = ({ isLoading, icon, content, type, handleClick }) => {
 
 Button.defaultProps = {
     isLoading: false,
-    icon: "pen",
+    icon: "edit",
     content: "Click",
     Type: ""
 };

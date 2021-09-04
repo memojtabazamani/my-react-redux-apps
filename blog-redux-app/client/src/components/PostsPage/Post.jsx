@@ -1,24 +1,25 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import Button from "../Utilities/Button";
 
-export const Post = ({title, author, body }) => {
+export const Post = ({ post }) => {
     return (
-        <div class="card">
-            <div class="content">
-                <div class="header">
-                    { title }
+        <div className="card">
+            <div className="content">
+                <div className="header">
+                    { post.title }
                 </div>
-                <div class="meta">
-                    { author }
+                <div className="meta">
+                    { post.author }
                 </div>
-                <div class="description">
-                   { body }
+                <div className="description">
+                   { post.body }
                 </div>
             </div>
-            <div class="extra content">
-                <div class="ui two buttons">
-                    <div class="ui basic green button">Approve</div>
-                    <div class="ui basic red button">Decline</div>
+            <div className="extra content">
+                <div className="ui two buttons">
+                    <Button type="yellow" content="Edit" />
+                    <Button type="red" content="Delete" icon='trash' />
                 </div>
             </div>
         </div>

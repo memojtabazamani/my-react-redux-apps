@@ -9,9 +9,10 @@ const MyTextInput = ({ label, ...props }) => {
             {
                 meta.touched && meta.error ? (
                    <Message
-                    icon='navigate'
-                    header={meta.error}
-                    content=""
+                    icon='ban'
+                    header="Warning"
+                    content={meta.error}
+                    type="yellow"
                    />
                 ) : null
             }

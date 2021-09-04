@@ -2,6 +2,7 @@
 import Header from '../components/Utilities/Header';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Posts from './PostsPage/Posts';
+import CreatePostForm from "./PostsPage/CreatePostForm";
 
 // CONSTANTS
 const STYLES = {
@@ -16,7 +17,8 @@ function App() {
                 <Header />
                 <div className="ui main text container" style={STYLES}>
                     <Switch>
-                        <Route path='/' extact component={Posts} />
+                        <Route path='/' exact component={Posts} />
+                        <Route path='/create' component={CreatePostForm} />
                     </Switch>
                 </div>
             </BrowserRouter>

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 // MY COMPONENTS
 import Message from '../../components/Utilities/Message';
-
+import LoadingPost from '../../components/Utilities/LoadingPost';
 // MY ACTIONS
 import { fetchPostsRequest } from '../../actions/index';
 import Post from './Post';
@@ -17,41 +17,48 @@ export const Posts = (props) => {
         if(props.errorPosts) {
             return (
                 <>
-                    <Message 
-                    icon="warning" 
+                    <Message
+                    icon="warning"
                     header="Error"
                     content={props.errorPosts}
                     type="red"
                     />
                 </>
             )
-        } else if(props.posts) {
+        } else if(props.posts.length > 0) { // Check Must Be Have Data
             return (
                 <div className="ui cards">
                     {
                         props.posts.map((post) => {
-                            <Post post={post} />
+                           return (<Post post={post} />)
                         })
                     }
                 </div>
             );
         }
-    }
+        return ( // Show Loading If not have data!
+            <>
+               <LoadingPost />
+            </>
+        )
+    };
 
     return (
         <div>
-            {renderPsots()}
+            { renderPsots() }
         </div>
     )
-}
+};
 
-const mapStateToProps = (state) => ({
-    posts: state.psots,
-    errorPosts: state.errorFetchPosts
-})
+const mapStateToProps = (state) => {
+    return {
+        posts:Object.values(state.posts),
+        errorPosts: state.errorFetchPosts
+    }
+};
 
 const mapDispatchToProps = {
     fetchPostsRequest
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Posts)
