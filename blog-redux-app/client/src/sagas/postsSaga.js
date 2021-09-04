@@ -8,25 +8,25 @@ import {
     fetchPostSuccess, fetchPostError } from '../actions';
 
 import { POSTS } from '../constants';
-import { fetchPosts, createPost, editPost, deletePost, detailPost } from '../api';
+import { fetchPosts, createPost, editPost, deletePost, fetchPost } from '../api';
 
 export function* handlePostsSaga() {
     try {
         const posts = yield call(fetchPosts); // Fetch From API
         // images = images.splice(10);
-        yield put(setPosts(posts)); // Call Another Action use PUT
+        yield put(fetchPostsSuccess(posts)); // Call Another Action use PUT
     } catch (error) {
-        yield put(setError(error.toString()));
+        yield put(fetchPostsError(error.toString()));
     }
 }
 
 export function* handlePostSaga(action) {
     try {
         const post = yield call(fetchPost, action.id);
-        yield put(setPost(post)); // Call Another Action use PUT
+        yield put(fetchPostSuccess(post)); // Call Another Action use PUT
     } catch(error) {
         console.log(error);
-        yield put(setErrorPost(error.toString()));
+        yield put(fetchPostError(error.toString()));
     }
 }
 

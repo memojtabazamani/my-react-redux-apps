@@ -12,8 +12,6 @@ export default (state = INITIAL_STATE, action) => {
             return state;
         case POSTS.FETCH_POSTS_SUCCESS:
             return {...state, ..._.mapKeys(action.posts, 'id')};
-        case POSTS.FETCH_POSTS_ERROR:
-            return {...state, error: action.error};
 
         case POSTS.CREATE_POST_REQUEST:
             return state;
