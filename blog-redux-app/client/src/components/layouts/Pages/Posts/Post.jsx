@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Button from "../Utilities/Button";
+import Button from "../../../Utilities/Button";
 import { Link, Redirect } from 'react-router-dom';
 
 // MY ACTIONS
-import { deletePostRequest } from '../../actions';
+import { deletePostRequest } from '../../../../actions';
 
 export const Post = (props) => {
     const { post } = props;

@@ -16,7 +16,8 @@
       "title": "Covid 19",
       "description": "Bad Virus!!",
       "author": "Jhon Doe",
-      "id": 3
+      "id": 3,
+      "body": "Bad Virus!"
     }
   ]
 }

@@ -3,11 +3,11 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 // MY COMPONENTS
 import Header from './Header';
-import Posts from '../PostsPage/Posts';
-import CreatePostForm from "../PostsPage/CreatePostForm";
+import Posts from './Pages/Posts/Posts';
+import CreatePostForm from "./Pages/Posts/CreatePostForm";
 import { connect } from 'react-redux';
 import Message from '../Utilities/Message';
-import EditPostForm from '../PostsPage/EditPostForm';
+import EditPostForm from './Pages/Posts/EditPostForm';
 
 
 const STYLES = {

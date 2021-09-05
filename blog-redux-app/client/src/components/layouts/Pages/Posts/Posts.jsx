@@ -2,10 +2,10 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux';
 
 // MY COMPONENTS
-import Message from '../../components/Utilities/Message';
-import LoadingPost from '../../components/Utilities/LoadingPost';
+import Message from '../../../Utilities/Message';
+import LoadingPost from '../../../Utilities/LoadingPost';
 // MY ACTIONS
-import { fetchPostsRequest } from '../../actions/index';
+import { fetchPostsRequest } from '../../../../actions';
 import Post from './Post';
 
 export const Posts = (props) => {
