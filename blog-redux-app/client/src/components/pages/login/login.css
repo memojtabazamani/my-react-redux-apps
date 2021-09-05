@@ -1,0 +1,13 @@
+body {
+    /* background-color: #DADADA; */
+  }
+  body > .grid {
+    height: 100%;
+  }
+  .image {
+    margin-top: -100px;
+  }
+  .column {
+    margin: 5% auto;
+    width: 55%;
+  }

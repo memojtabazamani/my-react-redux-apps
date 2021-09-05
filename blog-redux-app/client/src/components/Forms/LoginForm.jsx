@@ -3,7 +3,7 @@ import { Formik, Form } from 'formik';
 import MyTextInput from "./Input";
 
 // MY COMPOENNTS
-import { InsertFormValidation } from './validations';
+import { loginFormValidation } from './validations';
 
 const Com = (props) => {
     useEffect(() => {
@@ -16,32 +16,25 @@ const Com = (props) => {
                 onSubmit={(values) => {
                     props.handleMe(values);
                 }}
-                validationSchema={InsertFormValidation()}
+                validationSchema={loginFormValidation()}
             >
                 <Form className='ui form'>
                     <MyTextInput
-                        label="Enter The Title"
-                        name="title"
+                        label="Username"
+                        name="username"
                         type="text"
                         placeholder="...."
                         className='ui segment'
                     />
 
                     <MyTextInput
-                        label="Enter Description"
-                        name="body"
+                        label="Password"
+                        name="password"
                         type="text"
                         placeholder="..."
                         className="ui segment"
                     />
 
-                    <MyTextInput
-                        label="Enter Author"
-                        name="author"
-                        type="text"
-                        placeholder="..."
-                        className="ui segment"
-                    />
                     { props.submitButton }
                 </Form>
             </Formik>
@@ -51,10 +44,10 @@ const Com = (props) => {
 
 Com.defaultProps = {
     initialValues: {
-        title:"",
-        body: ""
+        username:"",
+        password: ""
     },
-    submitButton: <button className="ui green button" type="submit">Submit Form</button>
+    submitButton: <button className="ui green button" type="submit">Login</button>
 };
 
 export default Com;

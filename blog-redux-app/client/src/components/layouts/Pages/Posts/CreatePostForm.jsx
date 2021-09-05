@@ -1,8 +1,8 @@
-import BlogForm from '../Forms/BlogForm';
+import BlogForm from '../../../Forms/BlogForm';
 import { connect } from 'react-redux';
 
 // MY ACTIONS
-import {createPostRequest, fetchPostsRequest} from '../../actions';
+import {createPostRequest, fetchPostsRequest} from '../../../../actions';
 
 const Com = (props) => {
     const submitForm = (values) => {

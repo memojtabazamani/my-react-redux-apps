@@ -17,15 +17,11 @@ export default (state = {}, action) => {
             return state;
         case POSTS.CREATE_POST_SUCCESS:
             return {...state, [action.post.id]: action.post};
-        case POSTS.CREATE_POST_ERROR:
-            return {...state, error: action.error};
 
         case POSTS.UPDATE_POST_REQUEST:
             return state;
         case POSTS.UPDATE_POST_SUCCESS:
             return {...state, [action.post.id]: action.post};
-        case POSTS.UPDATE_POST_ERROR:
-            return {...state, error: action.error};
 
         case POSTS.DELETE_POST_REQUEST:
             return state;
