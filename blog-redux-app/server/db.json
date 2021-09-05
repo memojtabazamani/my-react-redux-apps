@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "First Card - edited",
-      "author": "Mojtaba zamani",
+      "author": "Sarah",
       "body": "Hello This is First Card! - edited"
     },
     {
@@ -11,13 +11,6 @@
       "title": "Second Card",
       "author": "Mojtaba zamani",
       "body": "Hello This is Second Card!"
-    },
-    {
-      "title": "Covid 19",
-      "description": "Bad Virus!!",
-      "author": "Jhon Doe",
-      "id": 3,
-      "body": "Bad Virus!"
     }
   ]
 }

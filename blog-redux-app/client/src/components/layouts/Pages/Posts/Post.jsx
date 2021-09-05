@@ -21,7 +21,9 @@ export const Post = (props) => {
         <div className="card">
             <div className="content">
                 <div className="header">
-                    { post.title }
+                    <Link to={`/detail/${post.id}`}>
+                        { post.title }
+                    </Link>
                 </div>
                 <div className="meta">
                     { post.author }

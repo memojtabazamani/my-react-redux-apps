@@ -23,7 +23,7 @@ const Com = (props) => {
     if (props.post) {
         return (
             <BlogForm
-                initialValues={_.pick(props.post, "title", "body")}
+                initialValues={_.pick(props.post, "title", "body", 'author')}
                 handleMe={submitForm}
             />
         )
