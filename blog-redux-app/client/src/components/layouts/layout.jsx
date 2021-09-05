@@ -2,11 +2,12 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 // MY COMPONENTS
-import Header from '../Utilities/Header';
+import Header from './Header';
 import Posts from '../PostsPage/Posts';
 import CreatePostForm from "../PostsPage/CreatePostForm";
 import { connect } from 'react-redux';
 import Message from '../Utilities/Message';
+import EditPostForm from '../PostsPage/EditPostForm';
 
 
 const STYLES = {
@@ -42,6 +43,7 @@ const Layout = (props) => {
                     <Switch>
                         <Route path='/' exact component={Posts} />
                         <Route path='/create' component={CreatePostForm} />
+                        <Route path="/edit/:id" component={EditPostForm} />
                     </Switch>
                     {renderMessages()}
                 </div>

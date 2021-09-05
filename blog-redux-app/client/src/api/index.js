@@ -25,7 +25,7 @@ export const createPost = async (values) => {
 
 // HANDLE UPDATE POST FUNCTION
 export const editPost = async(id, values) => {
-    const response = await myAxios.patch(`/post/${id}`, values);
+    const response = await myAxios.patch(`/posts/${id}`, values);
 
     if(response.status >= 400) {
         throw new Error(data.errors);
@@ -47,7 +47,7 @@ export const deletePost = async(id) => {
 
 // HANDLE DETAIL POST FUNCTION
 export const fetchPost = async(id) => {
-    const response = await myAxios.get(`/post/${id}`);
+    const response = await myAxios.get(`/posts/${id}`);
     if(response.status >= 400) {
         throw new Error(data.errors)
     }

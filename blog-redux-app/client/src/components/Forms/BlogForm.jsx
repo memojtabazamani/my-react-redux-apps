@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Formik, Form } from 'formik';
 import MyTextInput from "./Input";
 
 // MY COMPOENNTS
 import { InsertFormValidation } from './validations';
 
-const com =  (props) => {
+const Com = (props) => {
+    useEffect(() => {
+        console.log(props);
+    }, [])
     return (
         <>
             <Formik
@@ -26,7 +29,7 @@ const com =  (props) => {
 
                     <MyTextInput
                         label="Enter Description"
-                        name="description"
+                        name="body"
                         type="text"
                         placeholder="..."
                         className="ui segment"
@@ -46,12 +49,12 @@ const com =  (props) => {
     )
 };
 
-com.defaultProps = {
+Com.defaultProps = {
     initialValues: {
         title:"",
-        description: ""
+        body: ""
     },
     submitButton: <button className="ui green button" type="submit">Submit Form</button>
 };
 
-export default com;
+export default Com;

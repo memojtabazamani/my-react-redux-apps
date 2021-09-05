@@ -49,6 +49,17 @@ export default (state = INITIAL_STATE, action) => {
                 status: "error",
                 message: action.error
             }
+        case POSTS.UPDATE_POST_SUCCESS: 
+            return {
+                status: "success",
+                message: "Your Post Has been updated!"
+            }
+        case POSTS.UPDATE_POST_ERROR:
+            return {
+                status: "error",
+                message: action.error
+            }
+
         default:
             return state;
     }
