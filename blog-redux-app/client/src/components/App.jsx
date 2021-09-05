@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // My Components
 import Layout from './layouts/layout';
 import LoginLayout from './layouts/login/login'
+import withAuth from "./hoc/WithAuth";
+import {connect} from "react-redux";
 
 // CONSTANTS
 const STYLES = {
@@ -27,4 +29,7 @@ function App(props) {
     );
 }
 
-export default App;
+export default withAuth(connect
+(null, null)
+(App));
+// export default App;

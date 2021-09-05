@@ -58,4 +58,6 @@ const mapStateToProps = (state) => {
     }
 }
 
+// export default withAuth(connect(mapStateToProps, null)(Layout));
+
 export default connect(mapStateToProps, null)(Layout);
