@@ -38,18 +38,16 @@ const Layout = (props) => {
 
     return (
         <div className="ui container">
-            <BrowserRouter>
-                <Header />
-                <div className="ui main text container" style={STYLES}>
-                    <Switch>
-                        <Route path='/' exact component={Posts} />
-                        <Route path='/create' component={CreatePostForm} />
-                        <Route path="/edit/:id" component={EditPostForm} />
-                        <Route path="/detail/:id" component={DetailPostForm} />
-                    </Switch>
-                    {renderMessages()}
-                </div>
-            </BrowserRouter>
+            <Header />
+            <div className="ui main text container" style={STYLES}>
+                <Switch>
+                    <Route path='/' exact component={Posts} />
+                    <Route path='/create' component={CreatePostForm} />
+                    <Route path="/edit/:id" component={EditPostForm} />
+                    <Route path="/detail/:id" component={DetailPostForm} />
+                </Switch>
+                {renderMessages()}
+            </div>
         </div>
     )
 }

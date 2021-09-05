@@ -1,4 +1,4 @@
-import {POSTS} from "../constants";
+import {POSTS, AUTH} from "../constants";
 
 /*
 START: POSTS ACTIONS
@@ -129,3 +129,19 @@ export const fetchPostError = (error) => {
 /*
 END: POSTS ACTIONS
 */
+
+/*
+    START: AUTH ACTIONS
+*/
+
+// SET LOGIN STATE
+export const setLogin = (auth) => {
+    return {
+        type: AUTH.SET_LOGIN,
+        auth
+    }
+}
+
+/**
+ * END: AUTH ACTIONS
+ */

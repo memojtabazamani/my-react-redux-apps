@@ -54,3 +54,4 @@ export const fetchPost = async(id) => {
     const { data } = response;
     return data;
 }
+

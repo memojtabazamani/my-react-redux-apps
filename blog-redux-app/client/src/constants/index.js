@@ -27,3 +27,10 @@ export const POSTS = {
     FETCH_POST_SUCCESS: "FETCH_POST_SUCCESS",
     FETCH_POST_ERROR: "FETCH_POST_ERROR",
 };
+
+/**
+ * This Const used for handle authentication
+*/
+export const AUTH = {
+    SET_LOGIN: "SET_LOGIN"
+}
