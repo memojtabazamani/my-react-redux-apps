@@ -8,8 +8,8 @@ const STYLES = {
     "marginTop": "50px",
 };
 
-export const getMobileLayout = (props) => {
-
+const getMobileLayout = (props) => {
+    console.log("name");
     let pathName = window.location.href || "";
     if (pathName.includes("/login")) return <LoginLayout title={"ورود/ثبت نام"} />
 
@@ -19,9 +19,11 @@ export const getMobileLayout = (props) => {
 
 function App(props) {
     return (
-        <BrowserRouter>
+       
+        <>
             {getMobileLayout(props)}
-        </BrowserRouter>
+        </>
+        
     );
 }
 

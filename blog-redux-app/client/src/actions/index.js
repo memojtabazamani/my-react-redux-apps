@@ -1,4 +1,4 @@
-import {POSTS, AUTH} from "../constants";
+import {POSTS, AUTH, URLS} from "../constants";
 
 /*
 START: POSTS ACTIONS
@@ -138,10 +138,21 @@ END: POSTS ACTIONS
 export const setLogin = (auth) => {
     return {
         type: AUTH.SET_LOGIN,
-        auth
+    }
+}
+export const setLoginError = () => {
+    return {
+        type: AUTH.SET_LOGIN_ERROR,
     }
 }
 
 /**
  * END: AUTH ACTIONS
  */
+
+ export const setPath = (url) => {
+    return {
+        type: URLS.ACTION_UI_INDEX_ACTION_SET_PATH,
+        url
+    };
+};

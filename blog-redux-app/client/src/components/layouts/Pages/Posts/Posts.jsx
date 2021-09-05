@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux';
 
 // MY COMPONENTS
-import Message from '../../../Utilities/Message';
+import Message from '../../../Utilities/LoadingPost';
 import LoadingPost from '../../../Utilities/LoadingPost';
 // MY ACTIONS
 import { fetchPostsRequest } from '../../../../actions';

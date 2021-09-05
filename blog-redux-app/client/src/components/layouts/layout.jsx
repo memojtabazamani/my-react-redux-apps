@@ -41,10 +41,10 @@ const Layout = (props) => {
             <Header />
             <div className="ui main text container" style={STYLES}>
                 <Switch>
-                    <Route path='/' exact component={Posts} />
                     <Route path='/create' component={CreatePostForm} />
                     <Route path="/edit/:id" component={EditPostForm} />
                     <Route path="/detail/:id" component={DetailPostForm} />
+                    <Route path='/' exact component={Posts} />
                 </Switch>
                 {renderMessages()}
             </div>

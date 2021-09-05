@@ -1,11 +1,10 @@
 import {AUTH} from "../../constants";
 
-const INITIAL_STATE = {};
 
-export default (state = INITIAL_STATE, action) => {
+export default (state = false, action) => {
     switch (action.type)  {
         case AUTH.SET_LOGIN:
-            return action.auth;
+            return true;
         default:
             return state;
     }

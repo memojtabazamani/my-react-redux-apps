@@ -32,5 +32,10 @@ export const POSTS = {
  * This Const used for handle authentication
 */
 export const AUTH = {
-    SET_LOGIN: "SET_LOGIN"
+    SET_LOGIN: "SET_LOGIN",
+    SET_LOGIN_ERROR: "SET_LOGIN_ERROR"
+}
+
+export const URLS = {
+    ACTION_UI_INDEX_ACTION_SET_PATH: "ACTION_UI_INDEX_ACTION_SET_PATH"
 }

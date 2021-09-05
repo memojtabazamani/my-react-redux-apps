@@ -1,4 +1,4 @@
-import { POSTS } from "../../constants";
+import { POSTS, AUTH } from "../../constants";
 
 const INITIAL_STATE = {};
 
@@ -59,6 +59,12 @@ export default (state = INITIAL_STATE, action) => {
                 status: "error",
                 message: action.error
             }
+
+        case AUTH.SET_LOGIN_ERROR:
+                return {
+                    status: "error",
+                    message: "Username/Password is invalid"
+                }
 
         default:
             return state;
