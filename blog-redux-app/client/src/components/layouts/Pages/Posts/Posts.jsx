@@ -13,8 +13,6 @@ export const Posts = (props) => {
         props.fetchPostsRequest();
     }, []);
 
-    
-    
     const renderPsots = () => {
         if (props.errorPosts) {
             return (

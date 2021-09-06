@@ -8,11 +8,24 @@ function withAuth() {
             const {auth,userActions} = props;
 
             const isFreePage = () => {
-                let pathname = window.location.pathname;
-                // return pathname === Routes.Login.path || pathname === Routes.Signup.path
+
+                let href = window.location.href;
+
+                return href.indexOf('/login') !== -1 ||
+                    href.indexOf('/auto-login') !== -1 ||
+                    href.indexOf('/mobileverify') !== -1 ||
+                    href.indexOf('/register-success') !== -1 ||
+                    href.indexOf('/suspend') !== -1 ||
+                    href.indexOf('/retrieve-password-check') !== -1||
+                    href.indexOf('/retrieve-mobileverify') !== -1||
+                    href.indexOf('/change-password-success') !== -1||
+                    href.indexOf('/change-password') !== -1||
+                    href.indexOf('/register') !== -1;
             };
 
+
             const isUserLogin = () => {
+                return true;
                 //return true;
                 return isFreePage() || (
                     auth.authToken?.code /*&&

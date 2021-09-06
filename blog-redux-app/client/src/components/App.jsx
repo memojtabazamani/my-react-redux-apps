@@ -21,15 +21,11 @@ const getMobileLayout = (props) => {
 
 function App(props) {
     return (
-       
         <>
             {getMobileLayout(props)}
         </>
-        
     );
 }
 
-export default withAuth(connect
-(null, null)
-(App));
+export default connect(null, null)(withAuth()(App));
 // export default App;
